@@ -1,2 +1,4 @@
 *.csv
 *.zip
+electricity_env/
+data/

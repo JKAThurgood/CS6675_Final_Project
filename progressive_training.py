@@ -39,7 +39,7 @@ def train_progressive(X, y, look_back, look_ahead, retrain_step, depthOfTree):
         # Move to next step
         start_idx += look_ahead
         
-        # Retrain if we passed a retrain_step
+        # Retrain if passed a retrain_step
         if start_idx % retrain_step == 0:
             # Use most recent look_back rows for retraining
             train_start = max(0, start_idx - look_back)

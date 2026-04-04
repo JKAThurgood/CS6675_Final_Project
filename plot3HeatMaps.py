@@ -17,8 +17,8 @@ def plot_three_heatmaps(dfs, titles, cmap="coolwarm", vmin=None, vmax=None):
         sns.heatmap(dfs[i].astype(float), annot=True, fmt=".2f", cmap=cmap,
                     vmin=vmin, vmax=vmax, ax=axes[i])
         axes[i].set_title(titles[i])
-        axes[i].set_xlabel("Tree Depth")
-        axes[i].set_ylabel("Look-Back (rows)")
+        axes[i].set_xlabel("Look-ahead")
+        axes[i].set_ylabel("Look-Back")
     
     plt.tight_layout()
     plt.show()

@@ -10,8 +10,6 @@ def train_progressive(X, y, look_back, look_ahead, retrain_step, depthOfTree):
     - Predicts look_ahead rows at each step
     """
     errors = []
-    predictions_list = []
-
     n_rows = X.shape[0]
     
     # Initialize model and first training window
@@ -30,7 +28,6 @@ def train_progressive(X, y, look_back, look_ahead, retrain_step, depthOfTree):
         
         # Predict
         predictions = model.predict(X_test)
-        predictions_list.extend(predictions)
         
         # Compute error
         error = np.sqrt(mean_squared_error(y_test, predictions))
@@ -49,4 +46,4 @@ def train_progressive(X, y, look_back, look_ahead, retrain_step, depthOfTree):
     
     # Average RMSE across all predictions
     avg_error = np.mean(errors)
-    return predictions_list, avg_error
+    return avg_error

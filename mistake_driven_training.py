@@ -9,7 +9,6 @@ def train_mistake_driven(X, y, look_back, look_ahead, depthOfTree, threshold):
     - Retrains ONLY if RMSE of last prediction > threshold
     """
     errors = []
-    predictions_list = []
 
     n_rows = X.shape[0]
     
@@ -28,7 +27,6 @@ def train_mistake_driven(X, y, look_back, look_ahead, depthOfTree, threshold):
         
         # Predict
         preds = model.predict(X_test)
-        predictions_list.extend(preds)
         
         # Compute RMSE for this window
         error = np.sqrt(mean_squared_error(y_test, preds))
@@ -45,4 +43,4 @@ def train_mistake_driven(X, y, look_back, look_ahead, depthOfTree, threshold):
         start_idx += look_ahead
     
     avg_error = np.mean(errors)
-    return predictions_list, avg_error
+    return avg_error

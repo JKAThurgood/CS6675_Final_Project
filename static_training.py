@@ -16,7 +16,7 @@ def train_static(X, y, look_back, look_ahead, depthOfTree):
 
     # Define prediction window
     start = look_back
-    end = look_back + look_ahead
+    end = len(X)-look_back
 
     # Handle edge case (avoid going out of bounds)
     if end > len(X):
@@ -35,4 +35,4 @@ def train_static(X, y, look_back, look_ahead, depthOfTree):
     # Compute RMSE
     avg_rmse = np.sqrt(mean_squared_error(y_test, predictions))
 
-    return predictions, avg_rmse
+    return avg_rmse

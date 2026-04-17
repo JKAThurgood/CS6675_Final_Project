@@ -12,7 +12,7 @@ https://www.kaggle.com/datasets/apurboshahidshawon/weatherdatabangladesh
 Download and extract to `data`
 
 ## Environment
-I had to create a python env to run everything. I used the following commands 
+**I had to create a python env to run everything**. I used the following commands 
 ```
 python3 -m venv decision_trees_env; 
 source decision_trees_env/bin/activate; 
